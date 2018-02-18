@@ -1,3 +1,5 @@
+// includes
+
 #include <stdio.h>
 #include <unistd.h>
 #include <termios.h>
@@ -5,8 +7,10 @@
 #include <ctype.h>
 #include <errno.h>
 
-#include "rawMode.h"
+// modular headers :wink:
+#include "app/rawMode.h"
 
+// driver functions
 int main()
 {
 

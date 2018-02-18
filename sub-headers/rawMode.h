@@ -1,4 +1,5 @@
 #include "die.h"
+#include "getWindowSize.h"
 
 // global variable to store default terminal attribute
 struct editorConfig

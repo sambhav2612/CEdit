@@ -12,7 +12,6 @@
 #include "sub-headers/rawMode.h"
 #include "sub-headers/refreshScreen.h"
 #include "sub-headers/processKeypress.h"
-#include "sub-headers/getWindowSize.h"
 
 // driver functions
 int main()

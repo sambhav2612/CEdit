@@ -4,6 +4,7 @@
         "rawmode.h": "c",
         "refreshscreen.h": "c",
         "processkeypress.h": "c",
-        "getwindowsize.h": "c"
+        "getwindowsize.h": "c",
+        "drawtilde.h": "c"
     }
 }

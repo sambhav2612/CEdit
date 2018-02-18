@@ -1,5 +1,3 @@
-#include "readKey.h"
-
 #define CTRL_KEY(k) ((k)&0x1f)
 
 void editorProcessKeypress()
@@ -11,7 +9,7 @@ void editorProcessKeypress()
     case CTRL_KEY('q'):
         write(STDOUT_FILENO, "\x1b[2J", 4);
         write(STDOUT_FILENO, "\x1b[H", 3);
-        
+
         exit(0);
         break;
     }

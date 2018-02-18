@@ -1,6 +1,6 @@
 {
   "name": "textc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a text editor in C",
   "main": "index.js",
   "scripts": {

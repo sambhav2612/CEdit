@@ -1,5 +1,3 @@
-#include "drawTilde.h"
-
 void editorRefreshScreen()
 {
     write(STDOUT_FILENO, "\x1b[2J", 4);

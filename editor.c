@@ -11,7 +11,11 @@
 // modular headers :wink:
 #include "sub-headers/rawMode.h"
 #include "sub-headers/refreshScreen.h"
+#include "sub-headers/readKeypress.h"
 #include "sub-headers/processKeypress.h"
+#include "sub-headers/drawTilde.h"
+#include "sub-headers/die.h"
+#include "sub-headers/getWindowSize.h"
 
 // driver functions
 int main()

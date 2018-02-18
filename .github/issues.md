@@ -1,6 +1,6 @@
 # READ DOCUMENTATION
 
-~~- Leaves two spaces after exiting the enter mode.~~
+- ~~Leaves two spaces after exiting the enter mode.~~
 
 - Abort (Core dumped) on running the build after step 44
 

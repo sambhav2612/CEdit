@@ -2,6 +2,7 @@
     "files.associations": {
         "die.h": "c",
         "rawmode.h": "c",
-        "refreshscreen.h": "c"
+        "refreshscreen.h": "c",
+        "processkeypress.h": "c"
     }
 }

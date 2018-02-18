@@ -1,24 +1,36 @@
 #include "die.h"
 
 // global variable to store default terminal attribute
-struct termios orig_termios;
+struct editorConfig
+{
+    int screenRows;
+    int screenColumns;
+
+    struct termios orig_termios;
+}E;
+
+void initEditor()
+{
+    if (getWindowSize(&E.screenRows, &E.screenColumns) == -1)
+        die("getWindowSize");
+}
 
 // turns on the display of what is being typed
 void disableRawMode()
 {
-    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios) == -1)
+    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &E.orig_termios) == -1)
         die("tcsetattr");
 }
 
 // shuts off the display of what is being typed
 void switchToRawMode()
 {
-    if (tcgetattr(STDIN_FILENO, &orig_termios) == -1)
+    if (tcgetattr(STDIN_FILENO, &E.orig_termios) == -1)
         die("tcgetattr");
 
     atexit(disableRawMode);
 
-    struct termios raw = orig_termios;
+    struct termios raw = E.orig_termios;
 
     // c_oflag refers to output flags
     raw.c_oflag &= ~(OPOST); // trun off output processing

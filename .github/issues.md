@@ -1,4 +1,4 @@
-# READ DOCUMENTATION
+- Read docs
 
 - ~~Leaves two spaces after exiting the enter mode.~~
 

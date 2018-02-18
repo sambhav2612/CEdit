@@ -1,0 +1,24 @@
+{
+  "name": "textc",
+  "version": "0.0.1",
+  "description": "a text editor in C",
+  "main": "index.js",
+  "scripts": {
+    "test": "gcc --version",
+    "build": "make"
+  },
+  "author": "Sambhav Jain",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambhav2612/textC.git"
+  },
+  "keywords": [
+    "text-editor",
+    "c"
+  ],
+  "bugs": {
+    "url": "https://github.com/sambhav2612/textC/issues"
+  },
+  "homepage": "https://github.com/sambhav2612/textC#readme"
+}

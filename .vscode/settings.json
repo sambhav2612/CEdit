@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "die.h": "c"
+        "die.h": "c",
+        "rawmode.h": "c",
+        "refreshscreen.h": "c"
     }
 }

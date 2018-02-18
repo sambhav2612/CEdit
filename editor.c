@@ -9,13 +9,9 @@
 
 // modular headers :wink:
 #include "sub-headers/rawMode.h"
+#include "sub-headers/refreshScreen.h"
 
 #define CTRL_KEY(k) ((k)&0x1f)
-
-void editorRefreshScreen()
-{
-    write(STDOUT_FILENO, "\x1b[2J", 4);
-}
 
 char editorReadKey()
 {
@@ -36,11 +32,12 @@ void editorProcessKeypress()
     switch (c)
     {
     case CTRL_KEY('q'):
+        write(STDOUT_FILENO, "\x1b[2J", 4);
+        write(STDOUT_FILENO, "\x1b[H", 3);
+        
         exit(0);
         break;
-
     }
-
 }
 
 // driver functions

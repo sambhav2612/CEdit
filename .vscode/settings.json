@@ -5,6 +5,7 @@
         "refreshscreen.h": "c",
         "processkeypress.h": "c",
         "getwindowsize.h": "c",
-        "drawtilde.h": "c"
+        "drawtilde.h": "c",
+        "mutablestring.h": "c"
     }
 }

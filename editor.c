@@ -7,6 +7,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <sys/ioctl.h>
+#include <string.h>
 
 // modular headers :wink:
 #include "sub-headers/rawMode.h"
@@ -16,6 +17,7 @@
 #include "sub-headers/drawTilde.h"
 #include "sub-headers/die.h"
 #include "sub-headers/getWindowSize.h"
+#include "sub-headers/mutableString.h"
 
 // driver functions
 int main()

@@ -1,9 +1,16 @@
 void editorRefreshScreen()
 {
-    write(STDOUT_FILENO, "\x1b[2J", 4);
-    write(STDOUT_FILENO, "\x1b[H", 3);
+    struct abuf ab = ABUF_INIT;
 
-    editorDrawRows();
+    abAppend(ab, "\x1b[?25l", 6);
+    // abAppend(ab, "\x1b[2J", 4);
+    abAppend(ab, "\x1b[H", 3);
 
-    write(STDOUT_FILENO, "\x1b[H", 3);
+    editorDrawRows(&ab);
+
+    abAppend(ab, "\x1b[H", 3);
+    abAppend(ab, "\x1b[25h", 6);
+
+    write(STDOUT_FILENO, ab.b, ab.len);
+    abFree(&ab);
 }

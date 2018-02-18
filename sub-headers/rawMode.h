@@ -13,7 +13,7 @@ void initEditor()
 {
     E.cx = 0;
     E.cy = 0;
-    
+
     if (getWindowSize(&E.screenRows, &E.screenColumns) == -1)
         die("getWindowSize");
 }
@@ -56,7 +56,7 @@ void switchToRawMode()
 
     // c.cc stand for control characters
     raw.c_cc[VMIN] = 0;   // minmium number of input bytes
-    raw.c_cc[VTIME] = 10; // (one second) max amount of time to wait before read() returns
+    raw.c_cc[VTIME] = 1; // (one second) max amount of time to wait before read() returns
 
     // TCSAFLUSH argument specifies when to apply the change
     if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw) == -1)

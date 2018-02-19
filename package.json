@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "gcc --version",
-    "build": "make"
+    "build": "cc editor.c -o editor && make",
+    "install": "sudo apt-get install gcc make"
   },
   "author": "Sambhav Jain",
   "license": "GPL-3.0",

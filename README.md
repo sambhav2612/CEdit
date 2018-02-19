@@ -7,22 +7,25 @@ $ git clone https://github.com/sambhav2612/textC.git textC
 $ cd textC
 
 # install gcc and make
-$ npm run preinstall
+$ npm run install-dependencies
 
 # install packages
 $ npm install
 
 # test for installation of gcc and make
-$ npm run test
+$ npm run test-dependencies
 
 # build executable and run
-$ npm run build
+$ npm run build-executable
+
+# manually run the executable
+$ ./editor
 
 # this is optional, start a local server with current dir content in JSON format served online
-$ npm run start
+$ npm run start-server
 ```
 
-## Setup instructions
+## Machine setup instructions
 Refer: https://viewsourcecode.org/snaptoken/kilo/01.setup.html
 
 ## License

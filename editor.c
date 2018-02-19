@@ -10,15 +10,15 @@
 #include <string.h>
 
 // modular headers :wink:
-#include "sub-headers/globals.h"
-#include "sub-headers/rawMode.h"
-#include "sub-headers/refreshScreen.h"
-#include "sub-headers/readKeypress.h"
-#include "sub-headers/processKeypress.h"
-#include "sub-headers/drawTilde.h"
-#include "sub-headers/die.h"
-#include "sub-headers/getWindowSize.h"
-#include "sub-headers/mutableString.h"
+#include "globals.h"
+#include "terminal/rawMode.h"
+#include "terminal/readKeypress.h"
+#include "terminal/die.h"
+#include "terminal/getWindowSize.h"
+#include "output/refreshScreen.h"
+#include "output/drawTilde.h"
+#include "input/processKeypress.h"
+#include "buffer/mutableString.h"
 
 // driver functions
 int main()

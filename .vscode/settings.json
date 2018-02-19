@@ -6,6 +6,7 @@
         "processkeypress.h": "c",
         "getwindowsize.h": "c",
         "drawtilde.h": "c",
-        "mutablestring.h": "c"
+        "mutablestring.h": "c",
+        "globals.h": "c"
     }
 }

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "gcc --version",
     "build": "cc editor.c -o editor && make",
-    "install": "sudo apt-get install gcc make"
+    "preinstall": "sudo apt-get install gcc make",
+    "start": "http-server .",
+    "install": "npm install http-server"
   },
   "author": "Sambhav Jain",
   "license": "GPL-3.0",
@@ -21,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/sambhav2612/textC/issues"
   },
-  "homepage": "https://github.com/sambhav2612/textC#readme"
+  "homepage": "https://github.com/sambhav2612/textC#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
 }

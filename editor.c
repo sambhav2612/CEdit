@@ -11,14 +11,14 @@
 
 // modular headers :wink:
 #include "globals.h"
-#include "terminal/rawMode.h"
-#include "terminal/readKeypress.h"
 #include "terminal/die.h"
 #include "terminal/getWindowSize.h"
-#include "output/refreshScreen.h"
-#include "output/drawTilde.h"
-#include "input/processKeypress.h"
+#include "terminal/rawMode.h"
+#include "terminal/readKeypress.h"
 #include "buffer/mutableString.h"
+#include "output/drawTilde.h"
+#include "output/refreshScreen.h"
+#include "input/processKeypress.h"
 
 // driver functions
 int main()

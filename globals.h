@@ -1,4 +1,4 @@
-#define KILO_VERSION "0.0.3"
+#define KILO_VERSION "0.0.4"
 #define ABUF_INIT {NULL, 0}
 #define CTRL_KEY(k) ((k)&0x1f)
 

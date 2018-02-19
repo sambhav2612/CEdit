@@ -1,13 +1,13 @@
 {
   "name": "textc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a text editor in C",
   "main": "index.js",
   "scripts": {
-    "preinstall": "sudo apt-get install gcc make",
-    "test": "gcc --version",
-    "build": "node script.js",
-    "start": "node server.js ."
+    "install-dependencies": "sudo apt-get install gcc make",
+    "test-dependencies": "gcc --version && make --version",
+    "build-executable": "node build.js",
+    "start-server": "node server.js ."
   },
   "author": "Sambhav Jain",
   "license": "GPL-3.0",
@@ -25,7 +25,6 @@
   "homepage": "https://github.com/sambhav2612/textC#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "http-server": "^0.11.1",
     "shelljs": "^0.8.1"
   }
 }

@@ -1,4 +1,4 @@
-# textC
+# textC [![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC)
 a text editor written in C
 
 ## Installation

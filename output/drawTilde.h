@@ -6,7 +6,7 @@ void editorDrawRows(struct abuf *ab)
     if (y == E.screenRows / 3)
     {
       char welcome[80];
-      int welcomelen = snprintf(welcome, sizeof(welcome), "Kilo editor -- version %s", KILO_VERSION);
+      int welcomelen = snprintf(welcome, sizeof(welcome), "textC editor -- version %s", KILO_VERSION);
 
       if (welcomelen > E.screenColumns)
         welcomelen = E.screenColumns;

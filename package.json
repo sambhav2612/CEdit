@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gcc --version",
-    "build": "cc editor.c -o editor && make",
+    "build": "node script.js",
     "preinstall": "sudo apt-get install gcc make",
     "start": "node server.js ."
   },
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/sambhav2612/textC#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "shelljs": "^0.8.1"
   }
 }

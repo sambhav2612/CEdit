@@ -7,8 +7,7 @@
     "test": "gcc --version",
     "build": "cc editor.c -o editor && make",
     "preinstall": "sudo apt-get install gcc make",
-    "start": "http-server .",
-    "install": "npm install http-server"
+    "start": "http-server ."
   },
   "author": "Sambhav Jain",
   "license": "GPL-3.0",

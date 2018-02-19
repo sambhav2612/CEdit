@@ -1,5 +1,3 @@
-#define KILO_VERSION "0.0.2"
-
 void editorDrawRows(struct abuf *ab)
 {
   int y;
@@ -13,7 +11,7 @@ void editorDrawRows(struct abuf *ab)
       if (welcomelen > E.screenColumns)
         welcomelen = E.screenColumns;
 
-      int padding = (E.screencols - welcomelen) / 2;
+      int padding = (E.screenColumns - welcomelen) / 2;
 
       if (padding)
       {

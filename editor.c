@@ -10,6 +10,7 @@
 #include <string.h>
 
 // modular headers :wink:
+#include "sub-headers/globals.h"
 #include "sub-headers/rawMode.h"
 #include "sub-headers/refreshScreen.h"
 #include "sub-headers/readKeypress.h"

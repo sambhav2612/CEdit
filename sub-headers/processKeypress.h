@@ -1,5 +1,3 @@
-#define CTRL_KEY(k) ((k)&0x1f)
-
 void editorProcessKeypress()
 {
     char c = editorReadKey();

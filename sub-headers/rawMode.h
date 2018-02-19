@@ -1,14 +1,3 @@
-// global variable to store default terminal attribute
-struct editorConfig
-{
-    int cx, cy;
-
-    int screenRows;
-    int screenColumns;
-
-    struct termios orig_termios;
-} E;
-
 void initEditor()
 {
     E.cx = 0;

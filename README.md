@@ -1,4 +1,4 @@
-# textC [![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC)
+# textC [![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC) [ ![Codeship Status for sambhav2612/textC](https://app.codeship.com/projects/dd04a380-f7c1-0135-594b-7af7195f2991/status?branch=master)](https://app.codeship.com/projects/277969)
 a text editor written in C
 
 ## Installation

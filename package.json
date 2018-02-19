@@ -4,9 +4,9 @@
   "description": "a text editor in C",
   "main": "index.js",
   "scripts": {
+    "preinstall": "sudo apt-get install gcc make",
     "test": "gcc --version",
     "build": "node script.js",
-    "preinstall": "sudo apt-get install gcc make",
     "start": "node server.js ."
   },
   "author": "Sambhav Jain",

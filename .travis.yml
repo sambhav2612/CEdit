@@ -1,6 +1,6 @@
 language: c
 compiler: gcc
-script: make
+script: gcc editor.c -o editor && make
 branches:
   only: 
     - master

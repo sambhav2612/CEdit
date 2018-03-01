@@ -4,7 +4,7 @@ void editorDrawRows(struct abuf *ab)
   for (y = 0; y < E.screenRows; y++)
   {
     if (y >= E.screenRows) {
-    if (y == E.screenRows / 3)
+    if (E.screenRows == 0 && y == E.screenRows / 3)
     {
       char welcome[80];
       int welcomelen = snprintf(welcome, sizeof(welcome), "textC editor -- version %s", KILO_VERSION);

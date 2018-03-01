@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include <string.h>
 
-// modular headers :wink:
+// local headers :wink:
 #include "globals.h"
 #include "terminal/die.h"
 #include "terminal/getWindowSize.h"
@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
         editorOpen(argv[1]);
     }
 
-    while (1)
-    {
+    while (1) {
         editorRefreshScreen();
         editorProcessKeypress();
     }
+
     return 0;
 }

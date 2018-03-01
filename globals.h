@@ -2,6 +2,10 @@
 #define ABUF_INIT {NULL, 0}
 #define CTRL_KEY(k) ((k)&0x1f)
 
+#define _DEFAULT_SOURCE
+#define _BSD_SOURCE
+#define _GNU_SOURCE
+
 enum editorKey {
   ARROW_LEFT = 1000,
   ARROW_RIGHT,

@@ -17,11 +17,9 @@ if (process.argv.length <= 2) {
 
 	fs.readdir(path, function (err, content) {
 		items = content;
-		//console.log(items);
 	});
 
-	app.get('/', function (req, res) {
-		//console.log(req);
+	app.get('/', function (req, res) {sna
 		res.json({ "response": items });
 	});
 

@@ -30,10 +30,10 @@ void editorDrawRows(struct abuf *ab)
       abAppend(ab, "~", 1);
     }
   } else {
-      int len = E.row.size;
+      int len = E.row->size;
       if (len > E.screenColumns)
         len = E.screenColumns;
-      abAppend(ab, E.row.chars, len);
+      abAppend(ab, E.row->chars, len);
   }
 
     abAppend(ab, "\x1b[K", 3);
@@ -43,4 +43,14 @@ void editorDrawRows(struct abuf *ab)
       abAppend(ab, "\r\n", 2);
     }
   }
+}
+
+void editorAppendRow(char *s, size_t len) {
+  E.row->size = len;
+  E.row->chars = malloc(len + 1);
+  
+  memcpy(E.row->chars, s, len);
+  
+  E.row->chars[len] = '\0';
+  E.numrows = 1;
 }

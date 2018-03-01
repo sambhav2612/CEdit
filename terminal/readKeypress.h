@@ -28,7 +28,7 @@ int editorReadKey()
                     }
                 }
             } else {
-                switch (seq[1) {
+                switch (seq[1]) {
                     case 'A': return ARROW_UP;
                     case 'B': return ARROW_LEFT;
                     case 'C': return ARROW_DOWN;
@@ -38,10 +38,8 @@ int editorReadKey()
         }
 
         return '\x1b';
-        } else {
-            return c;
-        }
+    
+    } else {
+        return c;
     }
-
-    return c;
 }

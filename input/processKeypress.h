@@ -39,6 +39,15 @@ void editorProcessKeypress()
         exit(0);
         break;
 
+    case PAGE_UP:
+    case PAGE_DOWN:
+      {
+        int times = E.screenRows;
+        while (times--)
+          editorMoveCursor(c == PAGE_UP ? ARROW_UP : ARROW_DOWN);
+      }
+      break;
+
     case ARROW_UP:
     case ARROW_LEFT:
     case ARROW_DOWN:

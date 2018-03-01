@@ -3,6 +3,7 @@ void editorDrawRows(struct abuf *ab)
   int y;
   for (y = 0; y < E.screenRows; y++)
   {
+    if (y >= E.screenRows) {
     if (y == E.screenRows / 3)
     {
       char welcome[80];
@@ -28,6 +29,12 @@ void editorDrawRows(struct abuf *ab)
     {
       abAppend(ab, "~", 1);
     }
+  } else {
+      int len = E.row.size;
+      if (len > E.screenColumns)
+        len = E.screenColumns;
+      abAppend(ab, E.row.chars, len);
+  }
 
     abAppend(ab, "\x1b[K", 3);
 

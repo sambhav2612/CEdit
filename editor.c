@@ -23,11 +23,14 @@
 #include "io/editorOpen.h"
 
 // driver functions
-int main()
+int main(int argc, char *argv[])
 {
     switchToRawMode();
     initEditor();
-    editorOpen();
+    
+    if (argc >= 2) {
+        editorOpen(argv[1]);
+    }
 
     while (1)
     {

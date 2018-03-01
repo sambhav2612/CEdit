@@ -5,7 +5,7 @@ a text editor written in C
 Compiling with~~out~~ warning(s).
 
 ## Latest Update
-Add File I/O
+Add Vertical Scroll
 
 ## Installation
 ```bash

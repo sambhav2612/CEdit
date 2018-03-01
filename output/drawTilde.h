@@ -1,39 +1,40 @@
 void editorDrawRows(struct abuf *ab)
 {
   int y;
-  for (y = 0; y < E.screenRows; y++)
-  {
-    if (y >= E.screenRows) {
-    if (E.screenRows == 0 && y == E.screenRows / 3)
-    {
-      char welcome[80];
-      int welcomelen = snprintf(welcome, sizeof(welcome), "textC editor -- version %s", KILO_VERSION);
+  for (y = 0; y < E.screenRows; y++) {
+    int filerow = y + E.rowoff; 
 
-      if (welcomelen > E.screenColumns)
-        welcomelen = E.screenColumns;
+    if (filerow >= E.numrows) {
+      if (E.numrows == 0 && y == E.screenRows / 3)
+      {
+        char welcome[80];
+        int welcomelen = snprintf(welcome, sizeof(welcome), "textC editor -- version %s", KILO_VERSION);
 
-      int padding = (E.screenColumns - welcomelen) / 2;
+        if (welcomelen > E.screenColumns)
+          welcomelen = E.screenColumns;
 
-      if (padding)
+        int padding = (E.screenColumns - welcomelen) / 2;
+
+        if (padding)
+        {
+          abAppend(ab, "~", 1);
+          padding--;
+        }
+
+        while (padding--)
+          abAppend(ab, " ", 1);
+
+        abAppend(ab, welcome, welcomelen);
+      }
+      else
       {
         abAppend(ab, "~", 1);
-        padding--;
       }
-
-      while (padding--)
-        abAppend(ab, " ", 1);
-
-      abAppend(ab, welcome, welcomelen);
-    }
-    else
-    {
-      abAppend(ab, "~", 1);
-    }
-  } else {
-      int len = E.row[y].size;
-      if (len > E.screenColumns)
-        len = E.screenColumns;
-      abAppend(ab, E.row[y].chars, len);
+    } else {
+        int len = E.row[filerow].size;
+        if (len > E.screenColumns)
+          len = E.screenColumns;
+        abAppend(ab, E.row[filerow].chars, len);
   }
 
     abAppend(ab, "\x1b[K", 3);
@@ -56,4 +57,14 @@ void editorAppendRow(char *s, size_t len) {
   
   E.row[at].chars[len] = '\0';
   E.numrows++;
+}
+
+void editorScroll() {
+  if (E.cy < E.rowoff) {
+    E.rowoff = E.cy;
+  }
+
+  if (E.cy >= E.rowoff + E.screenRows) {
+    E.rowoff = E.cy - E.screenRows + 1;
+  }
 }

@@ -36,7 +36,16 @@ void editorProcessKeypress()
         write(STDOUT_FILENO, "\x1b[2J", 4);
         write(STDOUT_FILENO, "\x1b[H", 3);
 
-        exit(0);
+        exit(0);if (E.cy != E.screenRows - 1) { 
+                E.cy++;
+            }
+        break;
+
+    case HOME_KEY:
+        E.cx = 0;
+        break;
+    case END_KEY:
+        E.cx = E.screenColumns - 1;
         break;
 
     case PAGE_UP:

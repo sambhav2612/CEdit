@@ -19,10 +19,10 @@ char editorReadKey()
 
         if (seq[0] == '[') {
             switch (seq[0]) {
-                case 'A': return 'w';
-                case 'B': return 'a';
-                case 'C': return 's';
-                case 'D': return 'd';
+                case 'A': return ARROW_UP;
+                case 'B': return ARROW_LEFT;
+                case 'C': return ARROW_DOWN;
+                case 'D': return ARROW_RIGHT;
             }
 
             return '\x1b';

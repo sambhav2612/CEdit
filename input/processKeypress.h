@@ -1,18 +1,18 @@
 void editorMoveCursor(char key) {
     switch(key) {
-        case 'w':
+        case ARROW_UP:
             E.cx++;
             break;
 
-        case 'a' :
+        case ARROW_LEFT:
             E.cx--;
             break;
         
-        case 's': 
+        case ARROW_DOWN: 
             E.cy++;
             break;
 
-        case 'd': 
+        case ARROW_RIGHT: 
             E.cy--;
             break;
     }
@@ -31,10 +31,10 @@ void editorProcessKeypress()
         exit(0);
         break;
 
-    case 'w':
-    case 'a':
-    case 's':
-    case 'd':
+    case ARROW_UP:
+    case ARROW_LEFT:
+    case ARROW_DOWN:
+    case ARROW_RIGHT:
         editorMoveCursor(c);
         break;
     }

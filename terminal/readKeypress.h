@@ -8,7 +8,7 @@ char editorReadKey()
             die("read");
     }
 
-    id (c == '\x1b') {
+    if (c == '\x1b') {
         char seq[3];
 
         if (read(STDIN_FILENO, &seq[0], 1) != 1)
@@ -24,6 +24,10 @@ char editorReadKey()
                 case 'C': return 's';
                 case 'D': return 'd';
             }
+
+            return '\x1b';
+        } else {
+            return c;
         }
     }
 

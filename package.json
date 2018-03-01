@@ -6,6 +6,7 @@
   "scripts": {
     "install-dependencies": "sudo apt-get install gcc make",
     "test-dependencies": "gcc --version && make --version",
+    "compile": "cc editor.c -o editor && make",
     "build-executable": "node build.js",
     "start-server": "node server.js ."
   },

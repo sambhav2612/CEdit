@@ -6,7 +6,9 @@ enum editorKey {
   ARROW_LEFT = 1000,
   ARROW_RIGHT,
   ARROW_UP,
-  ARROW_DOWN
+  ARROW_DOWN,
+  PAGE_UP,
+  PAGE_DOWN
 };
 
 struct abuf

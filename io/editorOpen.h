@@ -10,7 +10,7 @@ void editorOpen(char *filename) {
 
     linelen = getline(&line, &linecap, fp);
 
-    if (linelen != -1) {
+    if ((linelen = getline(&line, &linecap, fp)) != -1) {
         while (linelen > 0 && line[linelen-1] == '\n' || line[linelen-1] == '\r') {
             linelen--;
         }

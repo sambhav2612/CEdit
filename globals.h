@@ -20,6 +20,11 @@ struct abuf
     int len;
 };
 
+typedef struct erow {
+  int size;
+  char *chars;
+} erow;
+
 // global variable to store default terminal attribute
 struct editorConfig
 {
@@ -27,6 +32,8 @@ struct editorConfig
 
     int screenRows;
     int screenColumns;
+    int numrows;
+    erow row;
 
     struct termios orig_termios;
 } E;

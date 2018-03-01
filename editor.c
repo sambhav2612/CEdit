@@ -7,6 +7,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <sys/ioctl.h>
+#include <sys/types.h>
 #include <string.h>
 
 // modular headers :wink:
@@ -19,12 +20,15 @@
 #include "output/drawTilde.h"
 #include "output/refreshScreen.h"
 #include "input/processKeypress.h"
+#include "io/editorOpen.h"
 
 // driver functions
 int main()
 {
     switchToRawMode();
     initEditor();
+    editorOpen();
+
     while (1)
     {
         editorRefreshScreen();

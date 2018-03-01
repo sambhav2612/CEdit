@@ -1,4 +1,4 @@
-void editorMoveCursor(char key) {
+void editorMoveCursor(int key) {
     switch(key) {
         case ARROW_UP:
             E.cx++;
@@ -20,7 +20,7 @@ void editorMoveCursor(char key) {
 
 void editorProcessKeypress()
 {
-    char c = editorReadKey();
+    int c = editorReadKey();
     // printf("%d\r\n", c); => works on exit
     switch (c)
     {

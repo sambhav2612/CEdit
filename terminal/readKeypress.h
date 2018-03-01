@@ -1,4 +1,4 @@
-char editorReadKey()
+int editorReadKey()
 {
     int nread;
     char c;

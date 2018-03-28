@@ -8,7 +8,7 @@ void editorDrawRows(struct abuf *ab)
       if (E.numrows == 0 && y == E.screenRows / 3)
       {
         char welcome[80];
-        int welcomelen = snprintf(welcome, sizeof(welcome), "textC editor -- version %s", KILO_VERSION);
+        int welcomelen = snprintf(welcome, sizeof(welcome), "textC editor -- version %s", TEXTC_VERSION);
 
         if (welcomelen > E.screenColumns)
           welcomelen = E.screenColumns;
@@ -62,14 +62,14 @@ void editorUpdateRow(erow *row) {
   }
   
   free(row->render);
-  row->render = malloc(row->size + tabs*(KILO_TAB_STOP - 1) + 1);
+  row->render = malloc(row->size + tabs*(TEXTC_TAB_STOP - 1) + 1);
 
   int index = 0;
   for (j = 0; j < row->size; ++j) {
     if (row->chars[j] == '\t') {
       row->render[index++] = ' ';
       
-      while (index % KILO_TAB_STOP != 0) {
+      while (index % TEXTC_TAB_STOP != 0) {
         row->render[index++] == ' ';
       }
     } else {

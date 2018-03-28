@@ -43,6 +43,8 @@ struct editorConfig
     int numrows;
     erow *row;
     char *filename;
+    char statusmsg[80];
+    time_t statusmsg_time;
 
     struct termios orig_termios;
 } E;

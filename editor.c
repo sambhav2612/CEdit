@@ -9,8 +9,10 @@
 #include <sys/ioctl.h>
 #include <sys/types.h>
 #include <string.h>
+#include <time.h>
+#include <stdarg.h>
 
-// local headers :wink:
+// local headers
 #include "globals.h"
 #include "terminal/die.h"
 #include "terminal/getWindowSize.h"
@@ -31,6 +33,8 @@ int main(int argc, char *argv[])
     if (argc >= 2) {
         editorOpen(argv[1]);
     }
+
+    editorSetStatusMessage("HELP: Ctrl-Q to Quit");
 
     while (1) {
         editorRefreshScreen();

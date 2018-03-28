@@ -9,6 +9,7 @@ void editorRefreshScreen()
 
     editorDrawRows(&ab);
     editorDrawStatusBar(&ab);
+    editorDrawMessageBar(&ab);
 
     char buf[32];
 

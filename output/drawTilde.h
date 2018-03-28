@@ -162,4 +162,28 @@ void editorDrawStatusBar(struct abuf *ab) {
   }
 
   abAppend(ab, "\x1b[m", 3);
+  abAppend(ab, "\r\n", 2);
+}
+
+void editorSetStatusMessage(const char *fmt, ...) {
+  va_list ap;
+  va_start(ap, fmt);
+
+  vsnprintf(E.statusmsg, sizeof(E.statusmsg), fmt, ap);
+  
+  va_end(ap);
+  E.statusmsg_time = time(NULL);
+}
+
+void editorDrawMessageBar(struct abuf *ab) {
+  abAppend(ab, "\x1b[K", 3);
+
+  int msglen = strlen(E.statusmsg);
+  if (msglen > E.screenColumns) {
+    msglen = E.screenColumns;
+  }
+
+  if (msglen && time(NULL) - E.statusmsg_time < 5) {
+    abAppend(ab, E.statusmsg, msglen);
+  }
 }

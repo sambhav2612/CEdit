@@ -100,6 +100,8 @@ void editorAppendRow(char *s, size_t len) {
 }
 
 void editorScroll() {
+  E.rx = E.cx;
+
   if (E.cy < E.rowoff) {
     E.rowoff = E.cy;
   }
@@ -108,11 +110,11 @@ void editorScroll() {
     E.rowoff = E.cy - E.screenRows + 1;
   }
 
-  if (E.cx < E.coloff) {
-    E.coloff = E.cx;
+  if (E.rx < E.coloff) {
+    E.coloff = E.rx;
   }
 
-  if (E.cx >= E.coloff + E.screenColumns) {
-    E.coloff = E.cx - E.screenColumns + 1;
+  if (E.rx >= E.coloff + E.screenColumns) {
+    E.coloff = E.rx - E.screenColumns + 1;
   }
 }

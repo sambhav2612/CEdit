@@ -31,10 +31,15 @@ void editorDrawRows(struct abuf *ab)
         abAppend(ab, "~", 1);
       }
     } else {
-        int len = E.row[filerow].size;
-        if (len > E.screenColumns)
+        int len = E.row[filerow].size - E.coloff;
+        if (len < 0) {
+          len = 0;
+        }
+        
+        if (len > E.screenColumns) {
           len = E.screenColumns;
-        abAppend(ab, E.row[filerow].chars, len);
+        }
+        abAppend(ab, &E.row[filerow].chars[E.coloff], len);
   }
 
     abAppend(ab, "\x1b[K", 3);
@@ -66,5 +71,13 @@ void editorScroll() {
 
   if (E.cy >= E.rowoff + E.screenRows) {
     E.rowoff = E.cy - E.screenRows + 1;
+  }
+
+  if (E.cx < E.coloff) {
+    E.coloff = E.cx;
+  }
+
+  if (E.cx >= E.coloff + E.screenColumns) {
+    E.coloff = E.cx - E.screenColumns + 1;
   }
 }

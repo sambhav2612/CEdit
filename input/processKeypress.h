@@ -1,9 +1,9 @@
 void editorMoveCursor(int key) {
     switch(key) {
         case ARROW_RIGHT:
-            if (E.cx != E.screenColumns - 1) {
+            //if (E.cx != E.screenColumns - 1) {
                 E.cx++;
-            }
+            //}
             break;
 
         case ARROW_LEFT:

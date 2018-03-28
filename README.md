@@ -2,7 +2,7 @@
 a text editor written in C
 
 ## Status
-Compiling with~~out~~ warning(s).
+Compiling without warning(s).
 
 ## Latest Update
 Add Vertical Scroll

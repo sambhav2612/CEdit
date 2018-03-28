@@ -1,8 +1,7 @@
-#define KILO_VERSION "0.0.4"
+#define KILO_VERSION "0.0.5"
 #define ABUF_INIT {NULL, 0}
 #define CTRL_KEY(k) ((k)&0x1f)
 
-#define _DEFAULT_SOURCE
 #define _BSD_SOURCE
 #define _GNU_SOURCE
 

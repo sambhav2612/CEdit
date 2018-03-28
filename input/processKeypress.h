@@ -50,26 +50,36 @@ void editorProcessKeypress()
         write(STDOUT_FILENO, "\x1b[2J", 4);
         write(STDOUT_FILENO, "\x1b[H", 3);
 
-        exit(0);if (E.cy != E.screenRows - 1) { 
-                E.cy++;
-            }
+        exit(0);
         break;
 
     case HOME_KEY:
         E.cx = 0;
         break;
+        
     case END_KEY:
-        E.cx = E.screenColumns - 1;
+        if (E.cy < E.numrows) {
+            E.cx = E.row[E.cy].size;
+        }
         break;
 
     case PAGE_UP:
     case PAGE_DOWN:
-      {
-        int times = E.screenRows;
-        while (times--)
-          editorMoveCursor(c == PAGE_UP ? ARROW_UP : ARROW_DOWN);
-      }
-      break;
+        {
+            if (c == PAGE_UP) {
+                E.cy = E.rowoff;
+            } else if (c == PAGE_DOWN) {
+                E.cy = E.rowoff + E.screenColumns - 1;
+                if (E.cy > E.numrows) {
+                    E.cy = E.numrows;
+                }
+            }
+            
+            int times = E.screenRows;
+            while (times--)
+                editorMoveCursor(c == PAGE_UP ? ARROW_UP : ARROW_DOWN);
+        }
+        break;
 
     case ARROW_UP:
     case ARROW_LEFT:

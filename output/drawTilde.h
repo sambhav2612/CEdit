@@ -40,15 +40,28 @@ void editorDrawRows(struct abuf *ab)
           len = E.screenColumns;
         }
         abAppend(ab, &E.row[filerow].render[E.coloff], len);
-  }
+    }
 
     abAppend(ab, "\x1b[K", 3);
 
-    if (y < E.screenRows - 1)
-    {
+    //if (y < E.screenRows - 1) {
       abAppend(ab, "\r\n", 2);
-    }
+    //}
   }
+}
+
+int editorRowCxToRx(erow *row, int cx) {
+  int rx = 0;
+  int j;
+
+  for (j = 0; j < cx; ++j) {
+    if (row->chars[j] == '\t') {
+      rx += (TEXTC_TAB_STOP - 1) - (rx % TEXTC_TAB_STOP);
+    }
+    rx++;
+  }
+
+  return rx;
 }
 
 void editorUpdateRow(erow *row) {
@@ -100,7 +113,10 @@ void editorAppendRow(char *s, size_t len) {
 }
 
 void editorScroll() {
-  E.rx = E.cx;
+  E.rx = 0;
+  if (E.cy < E.numrows) {
+    E.rx = editorRowCxToRx(&E.row[E.cy], E.cx);
+  }
 
   if (E.cy < E.rowoff) {
     E.rowoff = E.cy;
@@ -117,4 +133,17 @@ void editorScroll() {
   if (E.rx >= E.coloff + E.screenColumns) {
     E.coloff = E.rx - E.screenColumns + 1;
   }
+}
+
+void editorDrawStatusBar(struct abuf *ab) {
+  abAppend(ab, "\x1b[7m", 4);
+
+  int len = 0;
+
+  while(len < E.screenColumns) {
+    abAppend(ab, " ", 1);
+    len++;
+  }
+
+  abAppend(ab, "\x1b[m", 3);
 }

@@ -10,6 +10,8 @@ void initEditor()
 
     if (getWindowSize(&E.screenRows, &E.screenColumns) == -1)
         die("getWindowSize");
+    
+    E.screenRows -= 1;
 }
 
 // turns on the display of what is being typed

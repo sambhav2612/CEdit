@@ -1,4 +1,4 @@
-#define TEXTC_VERSION "0.0.7"
+#define TEXTC_VERSION "0.0.8"
 #define TEXTC_TAB_STOP 8
 #define ABUF_INIT {NULL, 0}
 #define CTRL_KEY(k) ((k)&0x1f)

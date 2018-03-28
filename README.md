@@ -5,7 +5,7 @@ a text editor written in C
 Compiling without warning(s).
 
 ## Latest Update
-Add Status Bar
+Add Message Bar
 
 ## Installation
 ```bash

@@ -1,4 +1,5 @@
 #define KILO_VERSION "0.0.5"
+#define KILO_TAB_STOP 8
 #define ABUF_INIT {NULL, 0}
 #define CTRL_KEY(k) ((k)&0x1f)
 
@@ -25,7 +26,9 @@ struct abuf
 
 typedef struct erow {
   int size;
+  int rsize;
   char *chars;
+  char *render;
 } erow;
 
 // global variable to store default terminal attribute

@@ -22,8 +22,8 @@
 #include "buffer/mutableString.h"
 #include "output/drawTilde.h"
 #include "output/refreshScreen.h"
-#include "input/processKeypress.h"
 #include "io/fileIO.h"
+#include "input/processKeypress.h"
 #include "io/editorOpen.h"
 
 // driver functions

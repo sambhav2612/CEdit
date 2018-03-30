@@ -52,3 +52,7 @@ struct editorConfig
 
     struct termios orig_termios;
 } E;
+
+void editorSetStatusMessage(const char *fmt, ...);
+void editorRefreshScreen();
+char *editorPrompt(char *prompt);

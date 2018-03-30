@@ -23,8 +23,9 @@
 #include "output/drawTilde.h"
 #include "output/refreshScreen.h"
 #include "io/fileIO.h"
-#include "input/processKeypress.h"
 #include "io/editorOpen.h"
+#include "input/processKeypress.h"
+#include "input/prompter.h"
 
 // driver functions
 int main(int argc, char *argv[])

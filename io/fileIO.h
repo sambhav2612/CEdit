@@ -24,7 +24,7 @@ char *editorRowsToString(int *buflen) {
 
 void editorSave() {
     if (E.filename == NULL) {
-        return;
+        E.filename = editorPrompt("Save as: %s");
     }
 
     int len;

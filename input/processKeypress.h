@@ -44,6 +44,7 @@ void editorProcessKeypress()
     switch (c)
     {
       case '\r':
+        editorInsertNewline();
         break;
 
       case CTRL_KEY('q'):

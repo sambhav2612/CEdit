@@ -36,6 +36,7 @@ void editorSave() {
             if (write(fd, buf, len) != -1) {
                 close(fd);
                 free(buf);
+                editorSetStatusMessage("%d bytes written to disk", len);
                 return;
             }
         }
@@ -43,5 +44,6 @@ void editorSave() {
     }
 
     free(buf);
+    editorSetStatusMessage("Can't save! I/O error: %s", strerror(errno));
     
 }

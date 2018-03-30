@@ -50,7 +50,14 @@ void editorProcessKeypress()
         if (E.dirty && quit_times > 0) {
           editorSetStatusMessage("WARNING! File has some unsaved changes."
             "Press CTRL-Q %d more times to quit", quit_times);
+          
+          quit_times--;
+          return;
         }
+        
+        write(STDOUT_FILENO, "\x1b[2J", 4);
+        write(STDOUT_FILENO, "\x1b[H", 3);
+        exit(0);
         break;
 
       case CTRL_KEY('s'):
@@ -102,8 +109,8 @@ void editorProcessKeypress()
         break;
     
       default:
-      editorInsertChar(c);
-      break;
+        editorInsertChar(c);
+        break;
     
     }
 

@@ -31,8 +31,17 @@ void editorSave() {
     char *buf = editorRowsToString(&len);
     
     int fd = open(E.filename, O_RDWR | O_CREAT, 0644);
-    ftruncate(fd, len);
-    write(fd, buf, len);
-    close(fd);
+    if (fd != -1) {
+        if (ftruncate(fd, len) != -1) {
+            if (write(fd, buf, len) != -1) {
+                close(fd);
+                free(buf);
+                return;
+            }
+        }
+        close(fd);
+    }
+
     free(buf);
+    
 }

@@ -19,7 +19,7 @@ void editorOpen(char *filename) {
             linelen--;
         }
 
-        editorAppendRow(line, linelen);
+        editorInsertRow(E.numrows, line, linelen);
     }
 
     free(line);

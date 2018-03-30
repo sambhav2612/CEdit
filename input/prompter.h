@@ -1,6 +1,7 @@
 char *editorPrompt(char *prompt) {
   size_t bufsize = 128;
   char *buf = malloc(bufsize);
+  
   size_t buflen = 0;
   buf[0] = '\0';
   
@@ -9,8 +10,16 @@ char *editorPrompt(char *prompt) {
     editorRefreshScreen();
     
     int c = editorReadKey();
-    
-    if (c == '\r') {
+
+    if (c == DEL_KEY || c == CTRL_KEY('h') || c == BACKSPACE) {
+      if (buflen != 0) {
+        buf[--buflen] == '\0';
+      }
+    } else if (c == '\x1b') {
+      editorSetStatusMessage("");
+      free(buf);
+      return NULL;
+    } else if (c == '\r') {
       if (buflen != 0) {
         editorSetStatusMessage("");
         return buf;

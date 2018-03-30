@@ -11,6 +11,7 @@
 #include <string.h>
 #include <time.h>
 #include <stdarg.h>
+#include <fcntl.h>
 
 // local headers
 #include "globals.h"

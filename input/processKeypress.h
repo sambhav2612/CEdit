@@ -39,7 +39,7 @@ void editorMoveCursor(int key) {
 
 void editorProcessKeypress()
 {
-    static int quit_times = TEXTC_QUIT_TIMES;
+    static int quit_times = CEdit_QUIT_TIMES;
     int c = editorReadKey();
     switch (c)
     {
@@ -119,5 +119,5 @@ void editorProcessKeypress()
     
     }
 
-    quit_times = TEXTC_QUIT_TIMES;
+    quit_times = CEdit_QUIT_TIMES;
 }

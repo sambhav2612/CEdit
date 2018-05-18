@@ -1,6 +1,6 @@
-#define TEXTC_VERSION "0.0.8"
-#define TEXTC_TAB_STOP 8
-#define TEXTC_QUIT_TIMES 3
+#define CEdit_VERSION "0.0.8"
+#define CEdit_TAB_STOP 8
+#define CEdit_QUIT_TIMES 3
 
 #define ABUF_INIT {NULL, 0}
 #define CTRL_KEY(k) ((k)&0x1f)

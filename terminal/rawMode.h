@@ -14,7 +14,7 @@ void initEditor()
 
     if (getWindowSize(&E.screenRows, &E.screenColumns) == -1)
         die("getWindowSize");
-    
+
     E.screenRows -= 2;
 }
 
@@ -55,7 +55,7 @@ void switchToRawMode()
     raw.c_cflag |= (CS8); // bit mask
 
     // c.cc stand for control characters
-    raw.c_cc[VMIN] = 0;   // minmium number of input bytes
+    raw.c_cc[VMIN] = 0;  // minmium number of input bytes
     raw.c_cc[VTIME] = 1; // (one second) max amount of time to wait before read() returns
 
     // TCSAFLUSH argument specifies when to apply the change

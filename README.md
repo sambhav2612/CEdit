@@ -4,18 +4,15 @@ A text editor written completely in C.
 ## Status [![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC) [ ![Codeship Status for sambhav2612/textC](https://app.codeship.com/projects/dd04a380-f7c1-0135-594b-7af7195f2991/status?branch=master)](https://app.codeship.com/projects/277969) [![BCH compliance](https://bettercodehub.com/edge/badge/sambhav2612/textC?branch=master)](https://bettercodehub.com/)
 Compiling without warning(s).
 ## Latest Update
-Add Save and Save as prompter.
+Add search by button combination per sent string sequence.
 
 ## Installation
 ```bash
-$ git clone https://github.com/sambhav2612/textC.git textC
-$ cd textC
+$ git clone https://github.com/sambhav2612/CEdit.git CEdit
+$ cd CEdit
 
 # install gcc and make
 $ npm run install-dependencies
-
-# install packages
-$ npm install
 
 # test for installation of gcc and make
 $ npm run test-dependencies
@@ -26,7 +23,11 @@ $ npm run build-executable
 # manually run the executable
 $ ./editor
 
-# this is optional, start a local server with current dir content in JSON format served online
+# == OPTIONAL ==
+# install packages 
+$ npm install
+
+# start a local server with current dir content in JSON format served online
 $ npm run start-server
 ```
 

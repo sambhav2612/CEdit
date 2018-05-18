@@ -32,14 +32,16 @@ int main(int argc, char *argv[])
 {
     switchToRawMode();
     initEditor();
-    
-    if (argc >= 2) {
+
+    if (argc >= 2)
+    {
         editorOpen(argv[1]);
     }
 
-    editorSetStatusMessage("HELP: Ctrl-S = Save | Ctrl-Q = Quit");
+    editorSetStatusMessage("HELP: Ctrl-S = Save | Ctrl-Q = Quit | Ctrl-F = Search");
 
-    while (1) {
+    while (1)
+    {
         editorRefreshScreen();
         editorProcessKeypress();
     }

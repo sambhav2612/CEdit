@@ -9,7 +9,9 @@ if (process.argv.length <= 2) {
 	var app = express();
 	var port = process.env.PORT || 3000;
 
-	app.use(require('body-parser').urlencoded({ extended: true }));
+	app.use(require('body-parser').urlencoded({
+		extended: true
+	}));
 	app.use(require('body-parser').json());
 
 	var path = process.argv[2];
@@ -19,8 +21,11 @@ if (process.argv.length <= 2) {
 		items = content;
 	});
 
-	app.get('/', function (req, res) {sna
-		res.json({ "response": items });
+	app.get('/', function (req, res) {
+		sna
+		res.json({
+			"response": items
+		});
 	});
 
 	if (app.listen(port)) {

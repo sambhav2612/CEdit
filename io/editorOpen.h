@@ -1,9 +1,11 @@
-void editorOpen(char *filename) {
+void editorOpen(char *filename)
+{
     free(E.filename);
     E.filename = strdup(filename);
 
     FILE *fp = fopen(filename, "r");
-    if (!fp) {
+    if (!fp)
+    {
         die("fopen");
     }
 
@@ -14,8 +16,10 @@ void editorOpen(char *filename) {
     linelen = getline(&line, &linecap, fp);
 
     // read all lines from the file
-    while ((linelen = getline(&line, &linecap, fp)) != -1) {
-        while (linelen > 0 && line[linelen-1] == '\n' || line[linelen-1] == '\r') {
+    while ((linelen = getline(&line, &linecap, fp)) != -1)
+    {
+        while (linelen > 0 && line[linelen - 1] == '\n' || line[linelen - 1] == '\r')
+        {
             linelen--;
         }
 

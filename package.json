@@ -1,5 +1,5 @@
 {
-  "name": "textc",
+  "name": "CEdit",
   "version": "0.0.9",
   "description": "a text editor in C",
   "main": "index.js",
@@ -14,16 +14,20 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sambhav2612/textC.git"
+    "url": "git+https://github.com/sambhav2612/CEdit.git"
   },
   "keywords": [
     "text-editor",
-    "c"
+    "c",
+    "terminal",
+    "makefile",
+    "gcc",
+    "make"
   ],
   "bugs": {
-    "url": "https://github.com/sambhav2612/textC/issues"
+    "url": "https://github.com/sambhav2612/CEdit/issues"
   },
-  "homepage": "https://github.com/sambhav2612/textC#readme",
+  "homepage": "https://github.com/sambhav2612/CEdit#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

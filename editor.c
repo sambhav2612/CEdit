@@ -20,6 +20,7 @@
 #include "terminal/rawMode.h"
 #include "terminal/readKeypress.h"
 #include "buffer/mutableString.h"
+#include "syntax/highlight.h"
 #include "output/drawTilde.h"
 #include "output/refreshScreen.h"
 #include "io/fileIO.h"

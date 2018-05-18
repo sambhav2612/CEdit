@@ -45,14 +45,56 @@ void editorDrawRows(struct abuf *ab)
       {
         len = E.screenColumns;
       }
-      abAppend(ab, &E.row[filerow].render[E.coloff], len);
+
+      char *c = &E.row[filerow].render[E.coloff];
+      unsigned char *hl = &E.row[filerow].hl[E.coloff];
+      int current_color = -1;
+
+      for (int j = 0; j < len; j++)
+      {
+        if (iscntrl(c[j]))
+        {
+          char sym = (c[j] <= 26) ? '@' + c[j] : '?';
+          abAppend(ab, "\x1b[7m", 4);
+          abAppend(ab, &sym, 1);
+          abAppend(ab, "\x1b[m", 3);
+
+          if (current_color != -1)
+          {
+            char buf[16];
+            int clen = snprintf(buf, sizeof(buf), "\x1b[%dm", current_color);
+            abAppend(ab, buf, clen);
+          }
+        }
+        else if (hl[j] == HL_NORMAL)
+        {
+          if (current_color != -1)
+          {
+            abAppend(ab, "\x1b[39m", 5);
+            current_color = -1;
+          }
+          abAppend(ab, &c[j], 1);
+        }
+        else
+        {
+          int color = editorSyntaxToColor(hl[j]);
+          if (color != current_color)
+          {
+            current_color = color;
+            char buf[16];
+
+            // snprintf writes the escape sequence into buffer
+            int clen = snprintf(buf, sizeof(buf), "\x1b[%dm", color);
+            abAppend(ab, buf, clen);
+          }
+          abAppend(ab, &c[j], 1);
+        }
+      }
+      abAppend(ab, "\x1b[39m", 5);
     }
 
     abAppend(ab, "\x1b[K", 3);
-
-    //if (y < E.screenRows - 1) {
     abAppend(ab, "\r\n", 2);
-    //}
   }
 }
 
@@ -131,6 +173,8 @@ void editorUpdateRow(erow *row)
 
   row->render[index] = '\0';
   row->rsize = index;
+
+  editorUpdateSyntax(row);
 }
 
 void editorInsertRow(int at, char *s, size_t len)
@@ -143,6 +187,11 @@ void editorInsertRow(int at, char *s, size_t len)
   E.row = realloc(E.row, sizeof(erow) * (E.numrows + 1));
   memmove(&E.row[at + 1], &E.row[at], sizeof(erow) * (E.numrows - at));
 
+  for (int j = at + 1; j <= E.numrows; j++)
+    E.row[j].idx++;
+
+  E.row[at].idx = at;
+
   E.row[at].size = len;
   E.row[at].chars = malloc(len + 1);
 
@@ -151,6 +200,8 @@ void editorInsertRow(int at, char *s, size_t len)
   E.row[at].chars[len] = '\0';
   E.row[at].rsize = 0;
   E.row[at].render = NULL;
+  E.row[at].hl = NULL;
+  E.row[at].hl_open_comment = 0;
 
   editorUpdateRow(&E.row[at]);
 
@@ -162,6 +213,7 @@ void editorFreeRow(erow *row)
 {
   free(row->render);
   free(row->chars);
+  free(row->hl);
 }
 
 void editorDelRow(int at)
@@ -173,6 +225,10 @@ void editorDelRow(int at)
 
   editorFreeRow(&E.row[at]);
   memmove(&E.row[at], &E.row[at + 1], sizeof(erow) * (E.numrows - at - 1));
+
+  for (int j = at; j < E.numrows - 1; j++)
+    E.row[j].idx--;
+
   E.numrows--;
   E.dirty++;
 }
@@ -317,7 +373,8 @@ void editorDrawStatusBar(struct abuf *ab)
                      E.filename ? E.filename : "[No Name]", E.numrows,
                      E.dirty ? "(modified)" : "");
 
-  int rlen = snprintf(rstatus, sizeof(rstatus), "%d/%d",
+  int rlen = snprintf(rstatus, sizeof(rstatus), "%s | %d/%d",
+                      E.syntax ? E.syntax->filetype : "no ft",
                       E.cy + 1, E.numrows);
 
   if (len > E.screenColumns)

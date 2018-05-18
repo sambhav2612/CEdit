@@ -1,12 +1,18 @@
 # CEdit
+
 A text editor written completely in C.
 
-## Status [![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC) [ ![Codeship Status for sambhav2612/textC](https://app.codeship.com/projects/dd04a380-f7c1-0135-594b-7af7195f2991/status?branch=master)](https://app.codeship.com/projects/277969) [![BCH compliance](https://bettercodehub.com/edge/badge/sambhav2612/textC?branch=master)](https://bettercodehub.com/)
+## Status
+
+[![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC) [ ![Codeship Status for sambhav2612/textC](https://app.codeship.com/projects/dd04a380-f7c1-0135-594b-7af7195f2991/status?branch=master)](https://app.codeship.com/projects/277969) [![BCH compliance](https://bettercodehub.com/edge/badge/sambhav2612/textC?branch=master)](https://bettercodehub.com/)
 Compiling without warning(s).
+
 ## Latest Update
-Add search by button combination per sent string sequence.
+
+Add filetype detection and syntax highlighting for C and C++.
 
 ## Installation
+
 ```bash
 $ git clone https://github.com/sambhav2612/CEdit.git CEdit
 $ cd CEdit
@@ -32,7 +38,13 @@ $ npm run start-server
 ```
 
 ## Machine setup instructions
+
 Refer: https://viewsourcecode.org/snaptoken/kilo/01.setup.html
 
+## Contribution Guideline
+
+Contributions are welcome. Do check the existing issues however, new features and updatea are always welcome via PRs.
+
 ## License
+
 ![GPL-3.0](http://200billionscandal.typepad.com/.a/6a00d83451da3169e20147e36f3e4a970b-800wi)

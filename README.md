@@ -17,7 +17,11 @@ Add unit testing via Check Framework.
 ## Installation
 
 ```bash
+# clone the repo from remote
 $ git clone https://github.com/sambhav2612/CEdit.git CEdit
+$ git remote add upstream https://github.com/sambhav2612/CEdit.git
+
+# cd into the directory
 $ cd CEdit
 
 # install gcc and make
@@ -34,6 +38,10 @@ $ ./editor
 
 # manually run the executable with open file
 $ ./editor <FILENAME.EXTENSION>
+
+# to keep up-to-date with remote
+$ git pull upstream master
+
 
 # == OPTIONAL ==
 # install packages 

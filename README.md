@@ -29,8 +29,11 @@ $ npm run test-dependencies
 # build executable and run
 $ npm run build-executable
 
-# manually run the executable
+# manually run the executable with new file
 $ ./editor
+
+# manually run the executable with open file
+$ ./editor <FILENAME.EXTENSION>
 
 # == OPTIONAL ==
 # install packages 

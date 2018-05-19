@@ -2,15 +2,17 @@
 
 A text editor written completely in C.
 
-## Status
+## Status [![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC) [ ![Codeship Status for sambhav2612/textC](https://app.codeship.com/projects/dd04a380-f7c1-0135-594b-7af7195f2991/status?branch=master)](https://app.codeship.com/projects/277969)
 
-[![Build Status](https://travis-ci.org/sambhav2612/textC.svg?branch=master)](https://travis-ci.org/sambhav2612/textC) [ ![Codeship Status for sambhav2612/textC](https://app.codeship.com/projects/dd04a380-f7c1-0135-594b-7af7195f2991/status?branch=master)](https://app.codeship.com/projects/277969)
-
-Compiling without warning(s).
+At version 0.0.10 and compiling without warning(s).
 
 ## Latest Update
 
 Add filetype detection and syntax highlighting for C and CPP.
+
+## Upcoming Update
+
+Add unit testing via Check Framework.
 
 ## Installation
 
@@ -44,7 +46,7 @@ Refer: https://viewsourcecode.org/snaptoken/kilo/01.setup.html
 
 ## Contribution Guideline
 
-Contributions are welcome. Do check the existing issues however, new features and updatea are always welcome via PRs.
+Contributions are welcome. Do check the existing contribution guideline [here](https://github.com/sambhav2612/CEdit/blob/master/.github/CONTRIBUTING.md).
 
 ## License
 

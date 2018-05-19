@@ -15,6 +15,7 @@
 
 // local headers
 #include "globals.h"
+#include "hldb/database.h"
 #include "terminal/die.h"
 #include "terminal/getWindowSize.h"
 #include "terminal/rawMode.h"

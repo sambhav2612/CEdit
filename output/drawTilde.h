@@ -50,7 +50,8 @@ void editorDrawRows(struct abuf *ab)
       unsigned char *hl = &E.row[filerow].hl[E.coloff];
       int current_color = -1;
 
-      for (int j = 0; j < len; j++)
+      int j;
+      for (j = 0; j < len; j++)
       {
         if (iscntrl(c[j]))
         {
@@ -187,7 +188,8 @@ void editorInsertRow(int at, char *s, size_t len)
   E.row = realloc(E.row, sizeof(erow) * (E.numrows + 1));
   memmove(&E.row[at + 1], &E.row[at], sizeof(erow) * (E.numrows - at));
 
-  for (int j = at + 1; j <= E.numrows; j++)
+  int j;
+  for (j = at + 1; j <= E.numrows; j++)
     E.row[j].idx++;
 
   E.row[at].idx = at;
@@ -226,7 +228,8 @@ void editorDelRow(int at)
   editorFreeRow(&E.row[at]);
   memmove(&E.row[at], &E.row[at + 1], sizeof(erow) * (E.numrows - at - 1));
 
-  for (int j = at; j < E.numrows - 1; j++)
+  int j;
+  for (j = at; j < E.numrows - 1; j++)
     E.row[j].idx--;
 
   E.numrows--;

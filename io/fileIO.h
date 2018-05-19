@@ -109,7 +109,8 @@ void editorFindCallback(char *query, int key)
 
     int current = last_match; // index of cuurent row we're searching in
 
-    for (int i = 0; i < E.numrows; i++)
+    int i;
+    for (i = 0; i < E.numrows; i++)
     {
         current += direction;
         if (current == -1)

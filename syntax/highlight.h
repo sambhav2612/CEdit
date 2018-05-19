@@ -176,7 +176,9 @@ void editorSelectSyntaxHighlight()
     if (E.filename == NULL)
         return;
     char *ext = strrchr(E.filename, '.');
-    for (unsigned int j = 0; j < HLDB_ENTRIES; j++)
+    
+    unsigned int j;
+    for (j = 0; j < HLDB_ENTRIES; j++)
     {
         struct editorSyntax *s = &HLDB[j];
         unsigned int i = 0;
@@ -188,7 +190,8 @@ void editorSelectSyntaxHighlight()
             {
                 E.syntax = s;
 
-                for (int filerow = 0; filerow < E.numrows; filerow++)
+                int filerow;
+                for (filerow = 0; filerow < E.numrows; filerow++)
                 {
                     editorUpdateSyntax(&E.row[filerow]);
                 }

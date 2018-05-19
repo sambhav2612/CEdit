@@ -9,7 +9,7 @@ Compiling without warning(s).
 
 ## Latest Update
 
-Add filetype detection and syntax highlighting for C and C++.
+Add filetype detection and syntax highlighting for C and CPP.
 
 ## Installation
 

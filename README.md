@@ -56,6 +56,10 @@ $ npm install
 $ npm run start-server
 ```
 
+## Known Issues
+
+Check the issue tracker for known issues [here](https://github.com/sambhav2612/CEdit/issues/created_by/sambhav2612).
+
 ## Machine setup instructions
 
 Refer: https://viewsourcecode.org/snaptoken/kilo/01.setup.html

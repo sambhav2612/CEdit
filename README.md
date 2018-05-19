@@ -66,4 +66,5 @@ Contributions are welcome. Do check the existing contribution guideline [here](h
 
 ## License
 
+© Sambhav Jain 2018 [sambhavjain2612@gmail.com](mailto:sambhavjain2612@gmail.com)
 ![GPL-3.0](http://200billionscandal.typepad.com/.a/6a00d83451da3169e20147e36f3e4a970b-800wi)

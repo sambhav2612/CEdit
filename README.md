@@ -17,9 +17,14 @@ Add unit testing via Check Framework.
 ## Installation
 
 ```bash
-# clone the repo from remote
-$ git clone https://github.com/sambhav2612/CEdit.git CEdit
+# init local repo
+$ git init
+
+# add repo remote
 $ git remote add upstream https://github.com/sambhav2612/CEdit.git
+
+# clone the repo from remote
+$ git clone upstream
 
 # cd into the directory
 $ cd CEdit

@@ -1,6 +1,9 @@
 language: c
 compiler: gcc
-script: gcc -coverage editor.c -o editor && make && gcov editor.c
+script: 
+  - gcc -coverage editor.c -o editor
+  - make
+  - gcov editor.c
 branches:
   only: 
     - add-coverage

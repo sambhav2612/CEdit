@@ -1,2 +1,2 @@
 editor: editor.c
-	$(GCC) editor.c -o editor -Wall -Wextra -pedantic -std=c99
+	$(GCC) editor.c -o editor -coverage -Wall -Wextra -pedantic -std=c99

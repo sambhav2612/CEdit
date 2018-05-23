@@ -3,6 +3,6 @@ compiler: gcc
 script: gcc -coverage editor.c -o editor && make && gcov editor.c
 branches:
   only: 
-    - master
+    - add-coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)

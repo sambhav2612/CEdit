@@ -1,7 +1,7 @@
 language: c
 compiler: gcc
 script: 
-  - gcc -coverage editor.c -o editor
+  - gcc --coverage editor.c -o editor
   - make
   - gcov editor.c
 branches:

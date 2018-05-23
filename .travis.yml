@@ -3,6 +3,7 @@ compiler: gcc
 script: 
   - gcc --coverage editor.c -o editor
   - make
+  - ./editor tester.cpp
   - gcov editor.c
 branches:
   only: 

@@ -1,6 +1,8 @@
 language: c
 compiler: gcc
-script: gcc editor.c -o editor && make
+script: gcc -coverage editor.c -o editor && make
 branches:
   only: 
     - master
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

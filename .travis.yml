@@ -1,6 +1,6 @@
 language: c
 compiler: gcc
-script: gcc -coverage editor.c -o editor && make
+script: gcc -coverage editor.c -o editor && make && gcov editor.c
 branches:
   only: 
     - master

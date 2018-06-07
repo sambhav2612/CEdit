@@ -1,11 +1,22 @@
 aliases:
   - &filter-only-master
-  branches:
+    branches:
     only:
       - master
 
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.1
+
+    steps:
+      - checkout
+      - run:
+          name: Building Website
+          command: |
+           cd website && yarn install && GIT_USER=sambhav2612 yarn run build
+
   deploy-website:
     docker:
       - image: circleci/node:8.11.1

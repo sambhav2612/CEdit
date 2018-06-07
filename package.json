@@ -1,6 +1,6 @@
 {
   "name": "CEdit",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "a text editor in C",
   "main": "index.js",
   "scripts": {

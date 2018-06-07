@@ -1,14 +1,14 @@
 # CEdit
 
-A text editor written completely in C.
+A text editor written in C and C++.
 
 ## Status [![Build Status](https://travis-ci.org/sambhav2612/CEdit.svg?branch=master)](https://travis-ci.org/sambhav2612/CEdit)
 
-At version 0.0.10 and compiling without warning(s).
+At version 0.0.11 and compiling without warning(s).
 
 ## Latest Update
 
-Add filetype detection and syntax highlighting for C and CPP.
+Add and deploy [static website](https://sambhav2612.github.io/CEdit/) made with Facebook's Docusauras Framework.
 
 ## Upcoming Update
 

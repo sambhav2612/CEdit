@@ -6,17 +6,6 @@ aliases:
 
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:8.11.1
-
-    steps:
-      - checkout
-      - run:
-          name: Building Website
-          command: |
-           cd website && yarn install && GIT_USER=sambhav2612 yarn run build
-
   deploy-website:
     docker:
       - image: circleci/node:8.11.1
@@ -29,7 +18,8 @@ jobs:
             git config --global user.email "sambhav2612@users.noreply.github.com"
             git config --global user.name "Sambhav Jain"
             echo "machine github.com login sambhav2612 password $GITHUB_TOKEN" > ~/.netrc
-            cd website && yarn install && GIT_USER=sambhav2612 yarn run publish-gh-pages
+            cd website && yarn install && GIT_USER=sambhav2612 yarn run build 
+            GIT_USER=sambhav2612 yarn run publish-gh-pages
 
 workflows:
   version: 2
